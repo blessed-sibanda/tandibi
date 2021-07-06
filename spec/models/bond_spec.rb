@@ -21,26 +21,41 @@
 require "rails_helper"
 
 RSpec.describe Bond, type: :model do
+  def create_bond
+    user1 = User.create!(
+      email: "blessed@example.com",
+      username: "blessed",
+      first_name: "Blessed"
+    )
+    user2 = User.create!(
+      email: "michelle@example.com",
+      username: "mishy",
+      first_name: "Michelle"
+    )
+    Bond.create!(
+      user_id: user1.id,
+      friend_id: user2.id,
+      state: Bond::FOLLOWING
+    )
+  end
+
+  let(:bond) { create_bond }
   describe "#valid?" do
     it "is invalid if state is blank" do
-      user1 = User.create!(
-        email: "blessed@example.com",
-        username: "blessed",
-        first_name: "Blessed"
-      )
-      user2 = User.create!(
-        email: "michelle@example.com",
-        username: "mishy",
-        first_name: "Michelle"
-      )
-      bond = Bond.create!(
-        user_id: user1.id,
-        friend_id: user2.id,
-        state: "following"
-      )
       expect(bond).to be_valid
       bond.state = ""
       expect(bond).not_to be_valid
+    end
+
+    it 'should validate state correctly' do
+      expect(bond).to be_valid
+      bond.state = 'unknown'
+      expect(bond).not_to be_valid
+
+      Bond::STATES.each do |state|
+        bond.state = state
+        expect(bond).to be_valid
+      end
     end
   end
 end

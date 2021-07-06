@@ -24,7 +24,7 @@ RSpec.describe Place, type: :model do
       locale: "en",
       name: "Wall St.",
       coordinate: "POINT(1 2 3)",
-      place_type: "other"
+      place_type: Place::PLACE_TYPES.sample
     )
   end
 
@@ -56,6 +56,16 @@ RSpec.describe Place, type: :model do
       expect(place).not_to be_valid
       place.place_type = nil
       expect(place).not_to be_valid
+    end
+    it 'should validate place_type correctly' do
+      expect(place).to be_valid
+      place.place_type = 'unknown'
+      expect(place).not_to be_valid
+
+      Place::PLACE_TYPES.each do |type|
+        place.place_type = type
+        expect(place).to be_valid
+      end
     end
   end
 end
