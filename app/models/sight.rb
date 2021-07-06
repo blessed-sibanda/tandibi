@@ -13,4 +13,7 @@
 #  fk_rails_...  (place_id => places.id)
 #
 class Sight < ApplicationRecord
+  belongs_to :place
+
+  validates :activity_type, presence: true
 end

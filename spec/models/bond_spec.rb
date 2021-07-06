@@ -18,8 +18,29 @@
 #  fk_rails_...  (friend_id => users.id)
 #  fk_rails_...  (user_id => users.id)
 #
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Bond, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#valid?" do
+    it "is invalid if state is blank" do
+      user1 = User.create!(
+        email: "blessed@example.com",
+        username: "blessed",
+        first_name: "Blessed"
+      )
+      user2 = User.create!(
+        email: "michelle@example.com",
+        username: "mishy",
+        first_name: "Michelle"
+      )
+      bond = Bond.create!(
+        user_id: user1.id,
+        friend_id: user2.id,
+        state: "following"
+      )
+      expect(bond).to be_valid
+      bond.state = ""
+      expect(bond).not_to be_valid
+    end
+  end
 end

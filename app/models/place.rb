@@ -17,4 +17,8 @@
 #  index_places_on_locale_and_coordinate  (locale,coordinate) UNIQUE
 #
 class Place < ApplicationRecord
+  validates :locale, presence: true
+  validates :coordinate, presence: true
+  validates :name, presence: true
+  validates :place_type, presence: true
 end
