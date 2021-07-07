@@ -40,10 +40,6 @@ RSpec.describe Bond, type: :model do
     end
 
     it "should validate state correctly" do
-      expect(bond).to be_valid
-      bond.state = "unknown"
-      expect(bond).not_to be_valid
-
       Bond::STATES.each do |state|
         bond.state = state
         expect(bond).to be_valid
