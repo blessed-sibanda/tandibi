@@ -17,6 +17,8 @@
 #  index_users_on_username  (username) UNIQUE
 #
 class User < ApplicationRecord
+  before_save :ensure_proper_name_case
+
   validates :email, uniqueness: true
   validates :username, uniqueness: true
   validates :first_name, presence: true
@@ -25,4 +27,29 @@ class User < ApplicationRecord
     with: URI::MailTo::EMAIL_REGEXP,
     message: "must be a valid email address"
   }
+
+  has_many :posts
+  has_many :bonds
+  has_many :inward_bonds,
+           class_name: 'Bond',
+           foreign_key: :friend_id
+  has_many :followings,
+           -> { where("bonds.state = ?", Bond::FOLLOWING) },
+           through: :bonds,
+           source: :friend
+  has_many :follow_requests,
+           -> { where("bonds.state = ?", Bond::REQUESTING) },
+           through: :bonds,
+           source: :friend
+
+  has_many :followers,
+           -> { where("bonds.state = ?", Bond::FOLLOWING) },
+           through: :inward_bonds,
+           source: :user
+
+  private
+
+  def ensure_proper_name_case
+    self.first_name.capitalize!
+  end
 end
