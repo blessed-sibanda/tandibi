@@ -37,6 +37,6 @@ class Bond < ApplicationRecord
   belongs_to :friend, class_name: "User"
 
   scope :following, -> { where(state: FOLLOWING) }
-  scope :requesting, -> { where(state: Bond::REQUESTING) }
-  scope :blocking, -> { where(state: Bond::BLOCKING) }
+  scope :requesting, -> { where(state: REQUESTING) }
+  scope :blocking, -> { where(state: BLOCKING) }
 end
