@@ -22,9 +22,9 @@ class Bond < ApplicationRecord
   validates :state, presence: true
 
   STATES = [
-    REQUESTING = 'requesting',
-    FOLLOWING = 'following',
-    BLOCKING = 'blocking',
+    REQUESTING = "requesting",
+    FOLLOWING = "following",
+    BLOCKING = "blocking"
   ].freeze
-  validates :state, inclusion: { in: STATES }
+  validates :state, inclusion: {in: STATES}
 end
