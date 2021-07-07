@@ -14,7 +14,7 @@
 #
 FactoryBot.define do
   factory :sight do
-    place_id { "" }
-    activity_type { "MyString" }
+    place { build :place }
+    activity_type { Sight::ACTIVITY_TYPES.sample }
   end
 end

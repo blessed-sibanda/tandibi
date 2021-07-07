@@ -15,15 +15,8 @@
 require "rails_helper"
 
 RSpec.describe Sight, type: :model do
-  def create_sight
-    place = Place.create!(locale: "en",
-      name: "Wall St.",
-      coordinate: "POINT(1 2 3)",
-      place_type: Place::PLACE_TYPES.sample)
-    Sight.new(place: place, activity_type: Sight::ACTIVITY_TYPES.sample)
-  end
+  let(:sight) { build :sight }
 
-  let(:sight) { create_sight }
   describe "#valid?" do
     it "is invalid if the activity_type is blank" do
       expect(sight).to be_valid

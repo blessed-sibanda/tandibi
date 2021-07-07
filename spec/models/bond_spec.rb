@@ -22,16 +22,8 @@ require "rails_helper"
 
 RSpec.describe Bond, type: :model do
   def create_bond
-    user1 = User.create!(
-      email: "blessed@example.com",
-      username: "blessed",
-      first_name: "Blessed"
-    )
-    user2 = User.create!(
-      email: "michelle@example.com",
-      username: "mishy",
-      first_name: "Michelle"
-    )
+    user1 = create :user
+    user2 = create :user
     Bond.create!(
       user_id: user1.id,
       friend_id: user2.id,
@@ -62,12 +54,8 @@ RSpec.describe Bond, type: :model do
   describe "#save" do
     context 'when complete data is given' do
       it 'can be persisted' do
-        user = User.create! email: 'user1@example.org',
-                            first_name: 'Edwin',
-                            username: 'user1'
-        friend = User.create! email: 'friend1@example.org',
-                            first_name: 'Edwin',
-                            username: 'friend1'
+        user = build :user
+        friend = build :user
         bond = Bond.new user: user,
                         friend: friend,
                         state: Bond::FOLLOWING

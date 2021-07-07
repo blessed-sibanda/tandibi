@@ -19,14 +19,7 @@
 require "rails_helper"
 
 RSpec.describe Place, type: :model do
-  let(:place) do
-    Place.create!(
-      locale: "en",
-      name: "Wall St.",
-      coordinate: "POINT(1 2 3)",
-      place_type: Place::PLACE_TYPES.sample
-    )
-  end
+  let(:place) { build :place }
 
   describe "#valid?" do
     it "is invalid if locale is blank" do
