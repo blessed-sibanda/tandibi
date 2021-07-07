@@ -48,13 +48,13 @@ RSpec.describe Bond, type: :model do
   end
 
   describe "#save" do
-    context 'when complete data is given' do
-      it 'can be persisted' do
+    context "when complete data is given" do
+      it "can be persisted" do
         user = build :user
         friend = build :user
         bond = Bond.new user: user,
-                        friend: friend,
-                        state: Bond::FOLLOWING
+          friend: friend,
+          state: Bond::FOLLOWING
         bond.save
         expect(bond).to be_persisted
         expect(bond.user).to eq user

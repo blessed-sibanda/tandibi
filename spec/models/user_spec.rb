@@ -71,8 +71,8 @@ RSpec.describe User, type: :model do
       end
 
       ok_emails = ["f.o.o.b.a.r@example.com",
-                   "foo+bar@example.com",
-                   "foo.bar@sub.example.co.id"]
+        "foo+bar@example.com",
+        "foo.bar@sub.example.co.id"]
       ok_emails.each do |email|
         user.email = email
         expect(user).to be_valid
@@ -96,7 +96,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "#followers" do
-    it 'can list all of its followers' do
+    it "can list all of its followers" do
       user1 = create :user
       user2 = create :user
       fol1 = create :user
@@ -115,13 +115,13 @@ RSpec.describe User, type: :model do
   end
 
   describe "#save" do
-    it 'capitalizes the name correctly' do
+    it "capitalizes the name correctly" do
       user = create :user
-      user.first_name = 'AdaM'
-      user.last_name = 'van der Berg'
+      user.first_name = "AdaM"
+      user.last_name = "van der Berg"
       user.save
-      expect(user.first_name).to eq 'Adam'
-      expect(user.last_name).to eq 'van der Berg'
+      expect(user.first_name).to eq "Adam"
+      expect(user.last_name).to eq "van der Berg"
     end
   end
 end
