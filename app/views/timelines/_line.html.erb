@@ -1,7 +1,7 @@
 <% user = post.user %>
 <% postable = post.postable %>
 
-<div class="p-3 bg-dark-700 flex">
+<div class="p-3 bg-dark-700 flex line">
   <div class="w-14">
     <%= image_tag user.profile_picture_url,
                   class: 'float-right rounded-full',
@@ -9,7 +9,7 @@
   </div>
   <div class="w-full pr-3 pl-3">
     <div class="flex items-center w-full">
-      <%= link_to timeline_path(user), class: 'text-gray-100' do %>
+      <%= link_to timeline_path(user), class: 'text-gray-100 identifier' do %>
         <span class="hover:underline font-bold text-sm"><%= user.name %></span>
         <span class="text-xs ml-2 text-gray-500 no-underline">@<%= user.username %></span>
       <% end %>
