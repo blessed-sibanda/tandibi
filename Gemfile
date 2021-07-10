@@ -30,6 +30,9 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "activerecord-postgis-adapter", "~> 7.1"
 gem 'devise', '~> 4.8'
 gem 'evil_icons', '~> 1.10'
+gem 'premailer-rails', '~> 1.11'
+gem 'letter_opener_web','~> 1.4'
+gem 'rexml', '~> 3.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
