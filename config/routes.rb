@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   authenticate :user do
-    resources :timelines, only: %i[index show]
+    resources :timelines, only: %i[index show], param: :username
   end
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
