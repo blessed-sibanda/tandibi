@@ -2,11 +2,11 @@
 <html>
 <%= render 'layouts/head' %>
 
-<body class="body-session">
-<h1 class="title hidden md:block absolute mb-6 mt-2 ml-2">
+<body class="body-session bg-gray-100 font-sans h-screen w-screen">
+<h1 class="font-light text-center text-4xl hidden md:block absolute mb-6 mt-2 ml-2">
   <%= content_for :page_title %>
 </h1>
-<main class="container">
+<main class="mx-auto flex h-full items-center">
   <div class="m-auto w-84 md:w-96">
     <%= render 'layouts/alert' %>
     <h1 class="title md:hidden mb-6">

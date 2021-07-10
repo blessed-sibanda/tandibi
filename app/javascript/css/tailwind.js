@@ -13,7 +13,7 @@ module.exports = {
       },
       colors: {
         main: {
-          default: '#60b0e2',
+          DEFAULT: '#60b0e2',
           '200': '#6020e2',
           '500': '#6cc1ff',
           '800': '#04609a',

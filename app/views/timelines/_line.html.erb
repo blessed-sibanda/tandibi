@@ -1,0 +1,37 @@
+<% user = post.user %>
+<% postable = post.postable %>
+
+<div class="p-3 bg-dark-700 flex">
+  <div class="w-14">
+    <%= image_tag user.profile_picture_url,
+                  class: 'float-right rounded-full',
+                  style: 'height: 44px; width; 44px;' %>
+  </div>
+  <div class="w-full pr-3 pl-3">
+    <div class="flex items-center w-full">
+      <%= link_to timeline_path(user), class: 'text-gray-100' do %>
+        <span class="hover:underline font-bold text-sm"><%= user.name %></span>
+        <span class="text-xs ml-2 text-gray-500 no-underline">@<%= user.username %></span>
+      <% end %>
+    </div>
+    <% if postable.is_a?(Status) %>
+      <%= simple_format post.postable.text %>
+    <% elsif postable.is_a?(Sight) %>
+      <div class="flex items-center">
+        <%= evil_icon 'ei-location' %>
+        <p>
+          <%= humanized_activity_type(postable) %>
+          <%= postable.place.name %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% if post.replies.any? %>
+  <div class="replies ml-4 pt-2">
+    <% post.replies.each do |reply| %>
+      <%= render 'timelines/line', post: reply %>
+    <% end %>
+  </div>
+<% end %>

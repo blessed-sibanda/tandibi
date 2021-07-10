@@ -2,12 +2,12 @@
 <html>
 <%= render 'layouts/head' %>
 
-<body class="body-member dark">
-  <main class="container sm:w-full sm:max-w-full">
+<body class="bg-gray-100 font-sans bg-dark-800 text-gray-100">
+  <main class="mx-auto sm:w-full sm:max-w-full">
     <div class="m-auto md:w-192">
       <%= render 'layouts/member/navbar' %>
       <%= render 'layouts/alert' %>
-      <div class="container p-6 md:pr-0 md:pl-0">
+      <div class="mx-auto p-6 md:pr-0 md:pl-0">
         <div class="m-auto w-full md:w-168">
           <%= yield %>
         </div>

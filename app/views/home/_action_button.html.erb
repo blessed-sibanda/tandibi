@@ -1,6 +1,13 @@
 <% method = local_assigns.fetch(:method, :get) %>
 
-<%= link_to link, class: 'action', method: method do %>
+<%= link_to link,
+            class: 'flex flex-row rounded-full py-2 pl-6 pr-2
+                    bg-indigo-700 text-white shadow items-center
+                    justify-center text-base',
+            method: method do %>
   <span class="mr-4"><%= caption %></span>
-  <%= evil_icon icon, size: :s, class: 'arrow' %>
+  <%= evil_icon icon,
+                size: :s,
+                class: 'flex items-center justify-center
+                bg-blue-300 rounded-full h-6 text-sm' %>
 <% end %>

@@ -1,21 +1,28 @@
-<nav class="topnav">
+<nav class="flex flex-wrap items-center justify-between
+ pl-6 pr-6 pt-1 pb-1 bg-dark-700">
   <div class="flex items-center flex-shrink-0">
     <%= link_to timelines_path do %>
-      <h1>tandibi</h1>
+      <h1 class="font-semibold text-2xl text-dark-400 mr-6 border-dark-700 border-b-2">
+        tandibi
+      </h1>
     <% end %>
   </div>
   <div class="block flex-grow flex items-center w-auto">
     <div class="text-sm flex-grow">
-      <%= link_to timelines_path, class: "linked-icon #{'active' if on_bunch?}" do %>
-        <%= evil_icon 'ei-timeline' %>
+      <%= link_to timelines_path, class: "inline-block mt-0
+mr-3 text-main-200 hover:text-blue-300 #{'text-blue-300' if on_bunch?}" do %>
+        <%= evil_icon 'ei-timeline', class: "h-10 w-10 #{'text-blue-300 border-b-2' if on_bunch?}" %>
       <% end %>
-      <%= link_to timeline_path(current_user), class: "linked-icon #{'active' if on_self?}" do %>
-        <%= evil_icon 'ei-user' %>
+      <%= link_to timeline_path(current_user),
+                  class: "inline-block mt-0
+mr-3 text-main-200 hover:text-blue-300 #{'text-blue-300' if on_self?}" do %>
+        <%= evil_icon 'ei-user', class: "h-10 w-10 #{'text-blue-300 border-b-2' if on_self?}" %>
       <% end %>
     </div>
     <div>
-      <%= link_to destroy_user_session_path, class: 'linked-icon sign-out', method: :delete do %>
-        <%= evil_icon 'ei-external-link' %>
+      <%= link_to destroy_user_session_path, class: 'inline-block mt-0
+       mr-3 text-main-200 hover:text-blue-300 mr-0', method: :delete do %>
+        <%= evil_icon 'ei-external-link', class: 'h-10 w-10' %>
       <% end %>
     </div>
   </div>
