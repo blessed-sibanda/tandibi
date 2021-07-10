@@ -1,0 +1,21 @@
+<% form_id = "poster-#{SecureRandom.hex(3)}" %>
+
+<div class="poster bg-dark-700 flex p-3 my-2">
+  <%= form_for Post.new, html: {id: form_id, class: 'w-full'} do |f| %>
+    <%= f.hidden_field :postable_type, value: 'Status' %>
+    <%= f.text_area :status_text, required: true, placeholder: "What's happening?",
+                    class: 'bg-dark-700 w-full resize-none outline-none' %>
+    <%= f.submit 'Say', class: 'submit-btn rounded-full text-gray-300 py-1 px-2 float-right w-full bg-indigo-800
+    text-white shadow cursor-pointer md:w-16 hover:bg-indigo-700 hover:text-white'
+                  %>
+  <% end %>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  var clickHandler = evt => {
+      var formElm = evt.target.closest('form')
+      var textareaElm = formElm.queryselector('textarea')
+      textareaElm.focus()
+  }
+  document.querySelector("#<%= form_id  %>").addEventListener('click', clickHandler, false)
+</script>

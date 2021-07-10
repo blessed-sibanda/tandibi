@@ -1,0 +1,5 @@
+.body-member
+.poster form:focus-within > .submit-btn ,
+.body-member .poster form:active > .submit-btn {
+    @apply bg-indigo-700 text-white;
+}

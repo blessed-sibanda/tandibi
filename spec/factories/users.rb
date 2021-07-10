@@ -38,6 +38,7 @@ FactoryBot.define do
     last_name { %w[Yamashita Sibanda Dongo].sample }
     email { "#{SecureRandom.hex(4)}@example.org" }
     is_public { true }
-    password {"1234pass"}
+    password { "1234pass" }
+    confirmed_at { Time.zone.now }
   end
 end
