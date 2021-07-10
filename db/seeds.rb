@@ -9,13 +9,17 @@ user1 = User.create!(
   first_name: "Sam",
   last_name: "Sam",
   email: "sam@example.com",
-  username: "samsam"
+  username: "samsam",
+  password: "1234pass",
+  confirmed_at: Time.zone.now
 )
 user2 = User.create!(
   first_name: "Blessed",
   last_name: "Sibanda",
   email: "blessed@example.com",
-  username: "blessed"
+  username: "blessed",
+  password: "1234pass",
+  confirmed_at: Time.zone.now
 )
 
 Bond.create! user: user1, friend: user2, state: Bond::FOLLOWING
