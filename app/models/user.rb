@@ -78,22 +78,6 @@ class User < ApplicationRecord
     @login || username || email
   end
 
-  def name
-    if last_name
-      "#{first_name} #{last_name}"
-    else
-      first_name
-    end
-  end
-
-  def profile_picture_url
-    @profile_picture_url ||=
-      begin
-        hash = Digest::MD5.hexdigest(email)
-        "https://www.gravatar.com/avatar/#{hash}?d=wavatar"
-      end
-  end
-
   class << self
     def find_authenticatable(login)
       where("username = :value OR email = :value", value: login).first
