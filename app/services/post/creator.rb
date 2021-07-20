@@ -10,7 +10,7 @@ class Post::Creator < ApplicationService
 
   def call
     case postable_type
-    when 'Status' then
+    when "Status"
       create_a_status_update
     else
       false
@@ -20,6 +20,13 @@ class Post::Creator < ApplicationService
   end
 
   private
+
+  def thread
+    @thread ||= begin
+        thread_id = params[:thread_id].presence
+        Post.find(thread_id) if thread_id
+      end
+  end
 
   def postable_type
     @postable_type ||= params.fetch(:postable_type)
@@ -33,6 +40,7 @@ class Post::Creator < ApplicationService
     status = Status.new(text: status_text)
     post.postable = status
     post.user = creator
+    post.thread = thread
     post.save
     post.persisted?
   end

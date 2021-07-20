@@ -5,14 +5,15 @@ class PostsController < ApplicationController
       permitted_params
     )
     unless is_posted
-      flash[:alert] = 'Something went wrong'
+      flash[:alert] = "Something went wrong"
     end
-    redirect_to timelines_path
+
+    redirect_to timelines_path(anchor: "post_#{Post.last.id}")
   end
 
   private
+
   def permitted_params
-    params.require(:post).permit(:postable_type, :status_text)
+    params.require(:post).permit(:postable_type, :status_text, :thread_id)
   end
 end
-
