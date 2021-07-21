@@ -5,6 +5,7 @@
 @import "common.css";
 @import "session.css";
 @import "modal.css";
+@import "member/poster.css";
 
 .ei-comment-icon {
   transition: all 0.25s ease;

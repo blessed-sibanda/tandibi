@@ -1,5 +1,34 @@
-.body-member
-.poster form:focus-within > .submit-btn ,
+.body-member .poster form:focus-within > .submit-btn,
 .body-member .poster form:active > .submit-btn {
-    @apply bg-indigo-700 text-white;
+  @apply bg-indigo-700 text-white;
+}
+
+.body-member .poster .controls {
+  @apply mt-2;
+  @apply flex flex-wrap items-center justify-between;
+}
+
+.body-member .poster .controls .options {
+  @apply block flex-grow flex items-center w-auto;
+}
+
+.body-member .poster .controls .options .option {
+  @apply text-sm;
+}
+
+.body-member .poster .controls .options .icon {
+  @apply rounded-full align-middle;
+  height: 31px;
+  width: 31px;
+  color: "#a0aec0";
+}
+
+.body-member .poster .controls .options .icon:hover {
+  @apply bg-blue-300 text-dark-800;
+  @apply cursor-pointer;
+  transition: all 0.2s ease;
+}
+
+.body-member .poster .controls .options .icon:focus-within {
+  @apply bg-blue-300 text-dark-800;
 }

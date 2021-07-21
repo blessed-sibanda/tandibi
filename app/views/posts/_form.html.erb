@@ -6,9 +6,16 @@
     <%= f.hidden_field :thread_id, value: thread&.id %>
     <%= f.text_area :status_text, required: true, placeholder: "What's happening?",
                     class: 'bg-dark-700 w-full resize-none outline-none' %>
-    <%= f.submit 'Say', class: 'submit-btn rounded-full text-gray-300 py-1 px-2 float-right w-full bg-indigo-800
+    <div class="controls">
+      <div class="options">
+        <div class="option">
+          <%= evil_icon 'ei-image' %>
+        </div>
+      </div>
+      <div><%= f.submit 'Say', class: 'submit-btn rounded-full text-gray-300 py-1 px-2 float-right w-full bg-indigo-800
     text-white shadow cursor-pointer md:w-16 hover:bg-indigo-700 hover:text-white'
-                  %>
+                  %></div>
+    </div>
   <% end %>
 </div>
 <script type="text/javascript" charset="utf-8">
