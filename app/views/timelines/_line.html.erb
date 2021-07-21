@@ -4,7 +4,7 @@
 <%= render 'layouts/inside_modal', title: 'Send a reply',modal_class: "comment_modal_#{post.id}" do %>
   <%= render 'posts/form', thread: post %>
 <% end %>
-<div id='<%= "post_#{post.id}" %>' class="p-3 bg-dark-700 flex line" data-post-path="<%= post_path(post) %>">
+<div id='<%= "post_#{post.id}" %>' class="p-3 hover:bg-dark-600 transition-all cursor-pointer bg-dark-700 flex line" data-post-path="<%= post_path(post) %>">
   <div class="w-14">
     <%= image_tag user.profile_picture_url,
                   class: 'float-right rounded-full',
@@ -41,9 +41,9 @@
   </div>
 </div>
 <% if post.replies.any? %>
-  <div class="replies ml-4 pt-2">
+  <div class="replies ml-4">
     <% post.replies.each do |reply| %>
-      <%= render 'timelines/line', post: reply %>
+      <div class="my-1"><%= render 'timelines/line', post: reply %></div>
     <% end %>
   </div>
 <% end %>
