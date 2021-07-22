@@ -36,12 +36,26 @@ class Post::Creator < ApplicationService
     @status_text ||= params.fetch(:status_text)
   end
 
+  def pictures
+    @pictures ||= params.fetch(:pictures, [])
+  end
+
+  def attach_pictures!
+    pictures.each do |uploaded_picture|
+      Post::PictureAttacher.call(post, uploaded_picture)
+    end
+  end
+
   def create_a_status_update
     status = Status.new(text: status_text)
     post.postable = status
     post.user = creator
     post.thread = thread
     post.save
+
+    if post.persisted?
+      attach_pictures!
+    end
     post.persisted?
   end
 end
