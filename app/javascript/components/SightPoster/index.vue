@@ -1,7 +1,7 @@
 <template>
   <div id="sight">
     <place-finder />
-    <div class="flex-col-reverse sm:flex-row">
+    <div class="block sm:flex">
       <div class="sm:w-2/3">
         <Map />
       </div>
