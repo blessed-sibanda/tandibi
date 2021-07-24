@@ -12,6 +12,8 @@ class Post::Creator < ApplicationService
     case postable_type
     when "Status"
       create_a_status_update
+    when "Sight"
+      create_a_sight_update
     else
       false
     end
@@ -23,9 +25,9 @@ class Post::Creator < ApplicationService
 
   def thread
     @thread ||= begin
-      thread_id = params[:thread_id].presence
-      Post.find(thread_id) if thread_id
-    end
+        thread_id = params[:thread_id].presence
+        Post.find(thread_id) if thread_id
+      end
   end
 
   def postable_type
@@ -44,6 +46,27 @@ class Post::Creator < ApplicationService
     pictures.each do |uploaded_picture|
       Post::PictureAttacher.call(post, uploaded_picture)
     end
+  end
+
+  def place
+    @place ||= begin
+        place = Place.find(params[:sight_place_id])
+      end
+  end
+
+  def create_a_sight_update
+    sight = Sight.new(
+      place: place,
+      activity_type: Sight::CHECKIN,
+    )
+    post.postable = sight
+    post.user = creator
+    post.thread = thread
+    post.save
+    if post.persisted?
+      attach_pictures!
+    end
+    post.persisted?
   end
 
   def create_a_status_update

@@ -1,5 +1,10 @@
 <template>
   <div id="sight">
+    <input
+      type="hidden"
+      name="post[sight_place_id]"
+      :value="selectedPlace.id"
+    />
     <place-finder />
     <div class="block sm:flex">
       <div class="sm:w-2/3">
@@ -18,6 +23,11 @@ import PlaceFinder from "./PlaceFinder.vue";
 import PlaceList from "./PlaceList.vue";
 export default {
   components: { Map, PlaceFinder, PlaceList },
+  computed: {
+    selectedPlace() {
+      return this.$store.state.sight.selectedPlace || {};
+    },
+  },
 };
 </script>
 

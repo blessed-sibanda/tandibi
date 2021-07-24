@@ -21,9 +21,11 @@
         <div class="switch option js-status-poster-switch active">
           <%= evil_icon 'ei-comment' %>
         </div>
-        <div class="switch option js-sight-poster-switch">
-          <%= evil_icon 'ei-location' %>
-        </div>
+        <% unless thread %>
+          <div class="switch option js-sight-poster-switch">
+            <%= evil_icon 'ei-location' %>
+          </div>
+        <% end %>
         <div class="option js-pictures-uploader">
           <input type="file" name="post[pictures][]" id="picture_files" multiple accept="image/*" id="">
           <%= evil_icon 'ei-image' %>
