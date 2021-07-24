@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Post::Creator do
   let(:user) { create :user }
@@ -8,13 +8,15 @@ RSpec.describe Post::Creator do
 
   describe "#call" do
     context "when creating a status" do
-      let(:postable_type) { 'Status' }
-      let(:status_text) { 'Howdy!' }
-      let(:permitted_params) { {
-        postable_type: postable_type,
-        status_text: status_text
-      } }
-      it 'can post successfully' do
+      let(:postable_type) { "Status" }
+      let(:status_text) { "Howdy!" }
+      let(:permitted_params) {
+        {
+          postable_type: postable_type,
+          status_text: status_text
+        }
+      }
+      it "can post successfully" do
         expect {
           subject.call
         }.to change {
@@ -23,26 +25,26 @@ RSpec.describe Post::Creator do
 
         post = user.posts.last
         expect(post.postable).to be_a Status
-        expect(post.postable.text).to eq 'Howdy!'
+        expect(post.postable.text).to eq "Howdy!"
       end
 
       context "when the user is not known" do
         let(:user) { nil }
-        it 'cannot be posted' do
+        it "cannot be posted" do
           expect(subject.call).to be_falsey
         end
       end
 
       context "when the status text is empty" do
-        let(:status_text) { '' }
-        it 'cannot be posted' do
+        let(:status_text) { "" }
+        it "cannot be posted" do
           expect(subject.call).to be_falsey
         end
       end
 
       context "when the postable type is empty" do
-        let(:postable_type) { '' }
-        it 'cannot be posted' do
+        let(:postable_type) { "" }
+        it "cannot be posted" do
           expect(subject.call).to be_falsey
         end
       end

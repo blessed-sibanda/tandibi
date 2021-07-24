@@ -24,12 +24,12 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :thread, class_name: "Post", optional: true
   has_many :pictures
-  has_many :replies, class_name: 'Post', foreign_key: :thread_id
+  has_many :replies, class_name: "Post", foreign_key: :thread_id
 
   attr_accessor :status_text
 
   scope :not_reply, -> { where(thread_id: nil) }
-  scope :written_by, -> (username) {
+  scope :written_by, ->(username) {
     poster = User.find_by_username username
     where(user: poster)
   }

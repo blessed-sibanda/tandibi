@@ -4,9 +4,9 @@ module SightDecorator
   def humanized_activity_type
     case activity_type
     when Sight::CHECKIN
-      'checked in at'
+      "checked in at"
     when Sight::CHECKOUT
-      'checked out from'
+      "checked out from"
     end
   end
 end

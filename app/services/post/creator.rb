@@ -23,9 +23,9 @@ class Post::Creator < ApplicationService
 
   def thread
     @thread ||= begin
-        thread_id = params[:thread_id].presence
-        Post.find(thread_id) if thread_id
-      end
+      thread_id = params[:thread_id].presence
+      Post.find(thread_id) if thread_id
+    end
   end
 
   def postable_type

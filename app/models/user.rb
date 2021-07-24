@@ -35,10 +35,10 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :trackable,
-         authentication_keys: [:login],
-         reset_password_keys: [:login]
+    :recoverable, :rememberable, :validatable,
+    :confirmable, :trackable,
+    authentication_keys: [:login],
+    reset_password_keys: [:login]
   before_save :ensure_proper_name_case
 
   attr_writer :login
@@ -55,20 +55,20 @@ class User < ApplicationRecord
   has_many :posts
   has_many :bonds
   has_many :inward_bonds,
-           class_name: "Bond",
-           foreign_key: :friend_id
+    class_name: "Bond",
+    foreign_key: :friend_id
   has_many :followings,
-           -> { Bond.following },
-           through: :bonds,
-           source: :friend
+    -> { Bond.following },
+    through: :bonds,
+    source: :friend
   has_many :follow_requests,
-           -> { Bond.requesting },
-           through: :bonds,
-           source: :friend
+    -> { Bond.requesting },
+    through: :bonds,
+    source: :friend
   has_many :followers,
-           -> { Bond.following },
-           through: :inward_bonds,
-           source: :user
+    -> { Bond.following },
+    through: :inward_bonds,
+    source: :user
 
   def to_param
     username

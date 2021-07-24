@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Posting" do
   given(:user) { create(:user) }
@@ -16,13 +16,13 @@ feature "Posting" do
     expect {
       fill_in "post_status_text", with: status_text
       click_on "Say"
-    }.to change {user.reload.posts.count}.from(0).to(1)
+    }.to change { user.reload.posts.count }.from(0).to(1)
 
     posted_status = user.posts.first.postable
     expect(posted_status.text).to eq status_text
     expect(page).to have_content status_text
     within ".line .content" do
-      expect(page).not_to have_selector('img')
+      expect(page).not_to have_selector("img")
     end
   end
 
@@ -30,13 +30,13 @@ feature "Posting" do
     sign_in user
     expect {
       fill_in "post_status_text", with: status_text
-      attach_file "picture_files", Rails.root.join('mypic.jpg'), visible: false
-      click_on 'Say'
-    }.to change {user.reload.posts.count}.from(0).to(1)
+      attach_file "picture_files", Rails.root.join("mypic.jpg"), visible: false
+      click_on "Say"
+    }.to change { user.reload.posts.count }.from(0).to(1)
     expect(page).to have_content status_text
     within ".line .content" do
-      expect(page).to have_selector('.pictures')
-      expect(page).to have_selector('img', count: 1)
+      expect(page).to have_selector(".pictures")
+      expect(page).to have_selector("img", count: 1)
     end
   end
 
@@ -45,15 +45,15 @@ feature "Posting" do
     expect {
       fill_in "post_status_text", with: status_text
       attach_file "picture_files", [
-        Rails.root.join('mypic.jpg'),
-        Rails.root.join('lgtm.png'),
+        Rails.root.join("mypic.jpg"),
+        Rails.root.join("lgtm.png")
       ], visible: false
-      click_on 'Say'
-    }.to change {user.reload.posts.count}.from(0).to(1)
+      click_on "Say"
+    }.to change { user.reload.posts.count }.from(0).to(1)
     expect(page).to have_content status_text
     within ".line .content" do
-      expect(page).to have_selector('.pictures')
-      expect(page).to have_selector('img', count: 2)
+      expect(page).to have_selector(".pictures")
+      expect(page).to have_selector("img", count: 2)
     end
   end
 end

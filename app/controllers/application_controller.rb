@@ -5,18 +5,17 @@ class ApplicationController < ActionController::Base
   private
 
   def member_controller?
-    return false if controller_path == 'home'
+    return false if controller_path == "home"
     true
   end
 
   def layout_by_resource
-    case
-    when devise_controller? then
-      'session'
-    when member_controller? then
-      'member'
+    if devise_controller?
+      "session"
+    elsif member_controller?
+      "member"
     else
-      'application'
+      "application"
     end
   end
 
@@ -31,6 +30,7 @@ class ApplicationController < ActionController::Base
         email
         password
         password_confirmation
-      ])
+      ]
+    )
   end
 end
