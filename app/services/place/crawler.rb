@@ -24,11 +24,11 @@ class Place::Crawler < ApplicationService
       lng = place_data["location"]["lng"]
       next if exists?("en", lng, lat)
       if place_data["categories"].empty?
-        foursquare_type = nil
+        place_type = nil
       else
-        foursquare_type = place_data["categories"][0]["name"]
+        place_type = place_data["categories"][0]["shortName"]
       end
-      Place.create!(name: place_data["name"], coordinate: geo.point(lng, lat), locale: "en", place_type: place_type(foursquare_type))
+      Place.create!(name: place_data["name"], coordinate: geo.point(lng, lat), locale: "en", place_type: place_type)
     end
   rescue Faraday::ConnectionFailed => e
     #  actually we should report this error
@@ -43,7 +43,7 @@ class Place::Crawler < ApplicationService
     @connection ||= Faraday.new(
       ENDPOINT,
       request: {
-        timeout: 7.seconds,
+        timeout: 5.seconds,
       },
     )
   end
@@ -61,16 +61,6 @@ class Place::Crawler < ApplicationService
         response = JSON.parse(response.body)
         response["response"]["venues"]
       end
-  end
-
-  def place_type(foursquare_type)
-    return "other" if foursquare_type.nil?
-    types = Place::PLACE_TYPES.dup
-    if types.include? foursquare_type
-      foursquare_type
-    else
-      "other"
-    end
   end
 
   def geo
