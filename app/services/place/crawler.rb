@@ -24,7 +24,7 @@ class Place::Crawler < ApplicationService
       lng = place_data["location"]["lng"]
       next if exists?("en", lng, lat)
       if place_data["categories"].empty?
-        place_type = nil
+        place_type = "other"
       else
         place_type = place_data["categories"][0]["shortName"]
       end

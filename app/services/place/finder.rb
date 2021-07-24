@@ -36,6 +36,6 @@ class Place::Finder < ApplicationService
   end
 
   def sort_by_distance(relation)
-    relation.order("ST_DISTANCE(#{base_point}, coordinate)")
+    relation.order(Arel.sql("ST_DISTANCE(#{base_point}, coordinate)"))
   end
 end
