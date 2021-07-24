@@ -3,7 +3,7 @@ class Api::V1::PlacesController < ApplicationController
     keyword = params.fetch(:keyword)
     lat = params.fetch(:lat)
     lng = params.fetch(:lng)
-    Place::Crawler.call(keyword, lat, lng)
+    PlaceCrawlerJob.perform_later(keyword, lat, lng)
     render json: Place::Finder.call(keyword, lat, lng)
   end
 
