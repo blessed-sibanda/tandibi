@@ -12,7 +12,7 @@ class Place::Crawler < ApplicationService
 
   ENDPOINT = "https://api.foursquare.com/v2/venues/search"
 
-  def initialize(keyword, lat:, lng:)
+  def initialize(keyword, lat, lng)
     @keyword = keyword
     @lat = lat
     @lng = lng
