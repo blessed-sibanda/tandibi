@@ -4,7 +4,7 @@ class Place::Finder < ApplicationService
 
   DISTANCE_RADIUS_IN_METRES = 200_000
 
-  def initialize(keyword:, lat:, lng:)
+  def initialize(keyword, lat:, lng:)
     @keyword = keyword
     @lat = lat
     @lng = lng
