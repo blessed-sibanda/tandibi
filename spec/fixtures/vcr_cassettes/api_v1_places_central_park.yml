@@ -1,0 +1,218 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.foursquare.com/v2/venues/search?client_id=5ERST5JYR5KHBUVZ2FZAGLHRF1APGQJP2NY3QUNPROCHNGW4&client_secret=XFJYQWQTUIUXY2MI4UJESRY2SI0CTIXYMHWB0TN2KWPKUQCZ&ll=40.785091%2C-73.968285&query=Central+Park&radius=5000&v=20180323
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.5.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      content-type:
+      - application/json; charset=utf-8
+      tracer-time:
+      - '83'
+      x-ratelimit-path:
+      - "/v2/venues/search"
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-reset:
+      - '1627133531'
+      x-ratelimit-remaining:
+      - '4995'
+      access-control-allow-origin:
+      - "*"
+      strict-transport-security:
+      - max-age=31536000
+      x-rate-limit-key:
+      - 77.246.49.6
+      x-ex:
+      - fastly_cdn
+      accept-ranges:
+      - bytes
+      date:
+      - Sat, 24 Jul 2021 12:38:05 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-jnb7025-JNB
+      x-cache:
+      - MISS
+      x-cache-hits:
+      - '0'
+      vary:
+      - Accept-Encoding,User-Agent,Accept-Language
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"meta":{"code":200,"requestId":"60fc09ac3c1a622547731e80"},"response":{"venues":[{"id":"412d2800f964a520df0c1fe3","name":"Central
+        Park","contact":{},"location":{"address":"59th St to 110th St","crossStreet":"5th
+        Ave to Central Park West","lat":40.78307608904521,"lng":-73.96549701690674,"labeledLatLngs":[{"label":"display","lat":40.78307608904521,"lng":-73.96549701690674}],"distance":324,"postalCode":"10028","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["59th St
+        to 110th St (5th Ave to Central Park West)","New York, NY 10028","United States"]},"categories":[{"id":"4bf58dd8d48988d163941735","name":"Park","pluralName":"Parks","shortName":"Park","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/park_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":4,"summary":"4
+        people are here","groups":[{"type":"others","name":"Other people here","count":4,"items":[]}]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4c531929479fc9282b90ee90","name":"Central
+        Park West - W 86th St","contact":{},"location":{"address":"Central Park W","crossStreet":"at
+        W 86th St","lat":40.78509379386497,"lng":-73.96913409233093,"labeledLatLngs":[{"label":"display","lat":40.78509379386497,"lng":-73.96913409233093}],"distance":71,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park W (at W 86th St)","New York, NY 10024","United States"]},"categories":[{"id":"4bf58dd8d48988d163941735","name":"Park","pluralName":"Parks","shortName":"Park","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/park_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4bb622b846d4a59345bdc5c0","name":"Central
+        Park West - W 88th St","contact":{},"location":{"address":"Central Park West","crossStreet":"W
+        88th St.","lat":40.78663329972804,"lng":-73.96844503976378,"labeledLatLngs":[{"label":"display","lat":40.78663329972804,"lng":-73.96844503976378}],"distance":172,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park West (W 88th St.)","New York, NY 10024","United States"]},"categories":[{"id":"4bf58dd8d48988d163941735","name":"Park","pluralName":"Parks","shortName":"Park","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/park_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4b76ed15f964a520366b2ee3","name":"Central
+        Park Loop","contact":{},"location":{"address":"Central Park","crossStreet":"btwn
+        85th & 96th St","lat":40.77758420956305,"lng":-73.96678447723389,"labeledLatLngs":[{"label":"display","lat":40.77758420956305,"lng":-73.96678447723389}],"distance":845,"postalCode":"10023","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park (btwn 85th & 96th St)","New York, NY 10023","United States"]},"categories":[{"id":"4bf58dd8d48988d106941735","name":"Track","pluralName":"Tracks","shortName":"Track","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/stadium_track_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":2,"summary":"2
+        people are here","groups":[{"type":"others","name":"Other people here","count":2,"items":[]}]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4a78425df964a52053e51fe3","name":"Central
+        Park Tennis Center","contact":{},"location":{"address":"Central Park West
+        at 96th St","lat":40.78931319964619,"lng":-73.96186241658044,"labeledLatLngs":[{"label":"display","lat":40.78931319964619,"lng":-73.96186241658044}],"distance":716,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park West at 96th St","New York, NY 10024","United States"]},"categories":[{"id":"4e39a956bd410d7aed40cbc3","name":"Tennis
+        Court","pluralName":"Tennis Courts","shortName":"Tennis Court","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/stadium_tennis_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4a6f7300f964a5202fd61fe3","name":"NYPD
+        - Central Park Precinct","contact":{},"location":{"address":"W 86th St. &
+        Transverse Rd.","lat":40.78441308148865,"lng":-73.967138120699,"labeledLatLngs":[{"label":"display","lat":40.78441308148865,"lng":-73.967138120699}],"distance":122,"postalCode":"10128","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["W 86th St.
+        & Transverse Rd.","New York, NY 10128","United States"]},"categories":[{"id":"4bf58dd8d48988d12e941735","name":"Police
+        Station","pluralName":"Police Stations","shortName":"Police Station","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/government_policestation_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"49ebbf61f964a52020671fe3","name":"Central
+        Park Mall","contact":{},"location":{"address":"Central Park","lat":40.77244937900301,"lng":-73.97154808044434,"labeledLatLngs":[{"label":"display","lat":40.77244937900301,"lng":-73.97154808044434}],"distance":1433,"postalCode":"10028","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park","New York, NY 10028","United States"]},"categories":[{"id":"4bf58dd8d48988d163941735","name":"Park","pluralName":"Parks","shortName":"Park","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/park_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4cbc8ca576ad9c74b407e8cb","name":"Seneca
+        Village - Central Park","contact":{},"location":{"address":"Central Park West","crossStreet":"85th
+        St","lat":40.78454654678174,"lng":-73.96885254952961,"labeledLatLngs":[{"label":"display","lat":40.78454654678174,"lng":-73.96885254952961}],"distance":77,"cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park West (85th St)","New York, NY","United States"]},"categories":[{"id":"4deefb944765f83613cdba6e","name":"Historic
+        Site","pluralName":"Historic Sites","shortName":"Historic Site","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/historicsite_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4bc307faabf495219c27c393","name":"Central
+        Park Cherry Blossoms","contact":{},"location":{"address":"W 88th St","crossStreet":"Central
+        Park (resevoir)","lat":40.78529812675017,"lng":-73.96669445983879,"labeledLatLngs":[{"label":"display","lat":40.78529812675017,"lng":-73.96669445983879}],"distance":136,"cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["W 88th St
+        (Central Park (resevoir))","New York, NY","United States"]},"categories":[{"id":"4bf58dd8d48988d15a941735","name":"Garden","pluralName":"Gardens","shortName":"Garden","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/garden_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4e838c3ae5e877f1e16ed150","name":"Central
+        Park SummerStage","contact":{},"location":{"address":"Central Park","crossStreet":"Rumsey
+        Playfield","lat":40.77264695319242,"lng":-73.97027108726499,"labeledLatLngs":[{"label":"display","lat":40.77264695319242,"lng":-73.97027108726499}],"distance":1395,"postalCode":"10021","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park (Rumsey Playfield)","New York, NY 10021","United States"]},"categories":[{"id":"4bf58dd8d48988d1f2931735","name":"Performing
+        Arts Venue","pluralName":"Performing Arts Venues","shortName":"Performing
+        Arts","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/performingarts_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4e74e8f98998ed82a444cf3b","name":"Central
+        Park - 97th St Transverse","contact":{},"location":{"lat":40.78851452846438,"lng":-73.95510378239035,"labeledLatLngs":[{"label":"display","lat":40.78851452846438,"lng":-73.95510378239035}],"distance":1174,"cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["New York,
+        NY","United States"]},"categories":[{"id":"4d4b7105d754a06377d81259","name":"Outdoors
+        & Recreation","pluralName":"Outdoors & Recreation","shortName":"Outdoors &
+        Recreation","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/default_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4df3cddf483bdb5e1375ac60","name":"225
+        Central Park West","contact":{},"location":{"lat":40.783062116177994,"lng":-73.97117706058188,"labeledLatLngs":[{"label":"display","lat":40.783062116177994,"lng":-73.97117706058188}],"distance":332,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["New York,
+        NY 10024","United States"]},"categories":[{"id":"4bf58dd8d48988d130941735","name":"Building","pluralName":"Buildings","shortName":"Building","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/default_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4da6442a6a23f2e80504cfee","name":"Central
+        Park - Gothic Bridge","contact":{},"location":{"address":"West Drive & 93rd
+        St.","crossStreet":"93rd St.","lat":40.78892695953061,"lng":-73.96207988262177,"labeledLatLngs":[{"label":"display","lat":40.78892695953061,"lng":-73.96207988262177}],"distance":675,"postalCode":"10128","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["West Drive
+        & 93rd St. (93rd St.)","New York, NY 10128","United States"]},"categories":[{"id":"4bf58dd8d48988d1df941735","name":"Bridge","pluralName":"Bridges","shortName":"Bridge","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/bridge_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4bc8be4daf07a593be8e812d","name":"Central
+        Park West - W83rd St","contact":{},"location":{"address":"Central Park West","crossStreet":"W83rd
+        St","lat":40.78320606885762,"lng":-73.97081851959229,"labeledLatLngs":[{"label":"display","lat":40.78320606885762,"lng":-73.97081851959229}],"distance":299,"cc":"US","neighborhood":"Central
+        Park","city":"New York","state":"NY","country":"United States","formattedAddress":["Central
+        Park West (W83rd St)","New York, NY","United States"]},"categories":[{"id":"4bf58dd8d48988d130941735","name":"Building","pluralName":"Buildings","shortName":"Building","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/default_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4e8cb9fde5fa18aa8ce7bed6","name":"Central
+        Park Montessori School","contact":{},"location":{"address":"1 West 91st Street","crossStreet":"Central
+        Park West","lat":40.788482,"lng":-73.96701,"labeledLatLngs":[{"label":"display","lat":40.788482,"lng":-73.96701}],"distance":392,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["1 West 91st
+        Street (Central Park West)","New York, NY 10024","United States"]},"categories":[{"id":"52e81612bcbc57f1066b7a45","name":"Preschool","pluralName":"Preschools","shortName":"Preschool","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/school_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"venuePage":{"id":"59386495"},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4a99898ff964a520f22e20e3","name":"Central
+        Park West","contact":{},"location":{"address":"Central Park West","crossStreet":"btwn
+        W 59th & W 110th Sts","lat":40.78367445103281,"lng":-73.97051978856325,"labeledLatLngs":[{"label":"display","lat":40.78367445103281,"lng":-73.97051978856325}],"distance":245,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park West (btwn W 59th & W 110th Sts)","New York, NY 10024","United States"]},"categories":[{"id":"4bf58dd8d48988d1f9931735","name":"Road","pluralName":"Roads","shortName":"Road","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/travel\/highway_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4b98580ef964a520fc3c35e3","name":"Central
+        Park  - Swings","contact":{},"location":{"address":"Central Park","lat":40.782909888075345,"lng":-73.96763575725062,"labeledLatLngs":[{"label":"display","lat":40.782909888075345,"lng":-73.96763575725062}],"distance":248,"postalCode":"10028","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park","New York, NY 10028","United States"]},"categories":[{"id":"4bf58dd8d48988d1e7941735","name":"Playground","pluralName":"Playgrounds","shortName":"Playground","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/playground_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4a09f665f964a52077741fe3","name":"Central
+        Park Zoo","contact":{},"location":{"address":"Central Park","crossStreet":"btwn
+        E 63rd & E 65th St","lat":40.767655429003796,"lng":-73.97182703018188,"labeledLatLngs":[{"label":"display","lat":40.767655429003796,"lng":-73.97182703018188}],"distance":1963,"postalCode":"10009","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park (btwn E 63rd & E 65th St)","New York, NY 10009","United States"]},"categories":[{"id":"4bf58dd8d48988d17b941735","name":"Zoo","pluralName":"Zoos","shortName":"Zoo","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/zoo_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"venuePage":{"id":"124456052"},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4ba3877df964a520b14438e3","name":"Central
+        Park - Mariners'' Gate Playground","contact":{},"location":{"address":"Central
+        Park West","crossStreet":"Btwn 85th St. & 86th St.","lat":40.78407313065228,"lng":-73.96960067282373,"labeledLatLngs":[{"label":"display","lat":40.78407313065228,"lng":-73.96960067282373}],"distance":158,"cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        Park West (Btwn 85th St. & 86th St.)","New York, NY","United States"]},"categories":[{"id":"4bf58dd8d48988d1e7941735","name":"Playground","pluralName":"Playgrounds","shortName":"Playground","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/playground_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4e8f0520490102ea52ca588b","name":"Central
+        Park - W 69th St Entrance Garden","contact":{},"location":{"address":"W 69th
+        St","crossStreet":"Central Park West","lat":40.77431405779868,"lng":-73.97697960643174,"labeledLatLngs":[{"label":"display","lat":40.77431405779868,"lng":-73.97697960643174}],"distance":1405,"postalCode":"10023","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["W 69th St
+        (Central Park West)","New York, NY 10023","United States"]},"categories":[{"id":"4bf58dd8d48988d15a941735","name":"Garden","pluralName":"Gardens","shortName":"Garden","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/garden_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4ba50a3ef964a5204cd438e3","name":"Central
+        Park - North End","contact":{},"location":{"address":"110th St","crossStreet":"btwn
+        5th & 8th Ave","lat":40.79803022193565,"lng":-73.95326614379883,"labeledLatLngs":[{"label":"display","lat":40.79803022193565,"lng":-73.95326614379883}],"distance":1917,"postalCode":"10026","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["110th St
+        (btwn 5th & 8th Ave)","New York, NY 10026","United States"]},"categories":[{"id":"4bf58dd8d48988d163941735","name":"Park","pluralName":"Parks","shortName":"Park","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/park_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"51c06344498e920abd8e6c09","name":"86th
+        St Shops - Central Park","contact":{},"location":{"lat":40.78376419505697,"lng":-73.96579673240583,"labeledLatLngs":[{"label":"display","lat":40.78376419505697,"lng":-73.96579673240583}],"distance":256,"cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["New York,
+        NY","United States"]},"categories":[{"id":"4bf58dd8d48988d126941735","name":"Government
+        Building","pluralName":"Government Buildings","shortName":"Government","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/government_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4f9eff31e4b04f3d0b31ee82","name":"Central
+        Park Great Lawn Softball Field #7","contact":{},"location":{"lat":40.783468165618885,"lng":-73.96554352790373,"labeledLatLngs":[{"label":"display","lat":40.783468165618885,"lng":-73.96554352790373}],"distance":293,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["New York,
+        NY 10024","United States"]},"categories":[{"id":"4bf58dd8d48988d1e8941735","name":"Baseball
+        Field","pluralName":"Baseball Fields","shortName":"Baseball Field","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/baseballfield_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4c1a7aaf63750f470f5db367","name":"Central
+        Park - Grate Field","contact":{},"location":{"address":"Central park west","crossStreet":"86th
+        st","lat":40.785231144929945,"lng":-73.96820971683033,"labeledLatLngs":[{"label":"display","lat":40.785231144929945,"lng":-73.96820971683033}],"distance":16,"cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["Central
+        park west (86th st)","New York, NY","United States"]},"categories":[{"id":"4bf58dd8d48988d15f941735","name":"Field","pluralName":"Fields","shortName":"Field","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/field_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"531b428c498e6ec6ad9a3538","name":"Central
+        Park Orthodontics","contact":{},"location":{"address":"271A Central Park West
+        (entrance on W.87th St.)","crossStreet":"(entrance on W.87th St.)","lat":40.786077745444146,"lng":-73.96893560886383,"labeledLatLngs":[{"label":"display","lat":40.786077745444146,"lng":-73.96893560886383}],"distance":122,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["271A Central
+        Park West (entrance on W.87th St.) ((entrance on W.87th St.))","New York,
+        NY 10024","United States"]},"categories":[{"id":"4bf58dd8d48988d178941735","name":"Dentist''s
+        Office","pluralName":"Dentist''s Offices","shortName":"Dentist''s Office","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/medical_dentist_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"venuePage":{"id":"84518279"},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4a621e5bf964a52021c31fe3","name":"Central
+        Park - 96th Street Playground","contact":{},"location":{"address":"1141 5th
+        Ave","crossStreet":"96th Street","lat":40.78781327170276,"lng":-73.95625668316937,"labeledLatLngs":[{"label":"display","lat":40.78781327170276,"lng":-73.95625668316937}],"distance":1058,"postalCode":"10128","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["1141 5th
+        Ave (96th Street)","New York, NY 10128","United States"]},"categories":[{"id":"4bf58dd8d48988d1e7941735","name":"Playground","pluralName":"Playgrounds","shortName":"Playground","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/playground_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"59b37ffa23a2e6344a98dee2","name":"Central
+        Park West Wellness","contact":{},"location":{"address":"279 Central Park W
+        Ste 1A","lat":40.7868629,"lng":-73.96838509999999,"labeledLatLngs":[{"label":"display","lat":40.7868629,"lng":-73.96838509999999}],"distance":197,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["279 Central
+        Park W Ste 1A","New York, NY 10024","United States"]},"categories":[{"id":"52e81612bcbc57f1066b7a3a","name":"Chiropractor","pluralName":"Chiropractors","shortName":"Chiropractors","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/medical_doctorsoffice_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4e65ee901fc747ca49d9dd6c","name":"247-249
+        Central Park West","contact":{},"location":{"address":"247-249 Central Park
+        W","crossStreet":"W 85th Street","lat":40.78457084153033,"lng":-73.97012114524841,"labeledLatLngs":[{"label":"display","lat":40.78457084153033,"lng":-73.97012114524841}],"distance":165,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["247-249
+        Central Park W (W 85th Street)","New York, NY 10024","United States"]},"categories":[{"id":"4deefb944765f83613cdba6e","name":"Historic
+        Site","pluralName":"Historic Sites","shortName":"Historic Site","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/historicsite_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"50a1220ae4b091ce32c7b6ea","name":"MTA
+        Bus - W 81 St & Central Park W (M10\/M79\/BxM2)","contact":{},"location":{"address":"W
+        81st St","crossStreet":"at Central Park W","lat":40.78204602484663,"lng":-73.97202502346262,"labeledLatLngs":[{"label":"display","lat":40.78204602484663,"lng":-73.97202502346262}],"distance":462,"postalCode":"10024","cc":"US","city":"New
+        York","state":"NY","country":"United States","formattedAddress":["W 81st St
+        (at Central Park W)","New York, NY 10024","United States"]},"categories":[{"id":"52f2ab2ebcbc57f1066b8b4f","name":"Bus
+        Stop","pluralName":"Bus Stops","shortName":"Bus Stop","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/travel\/busstation_","suffix":".png"},"primary":true}],"verified":false,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false},{"id":"4a38048cf964a520a79e1fe3","name":"Central
+        Park - 72nd St Playground","contact":{},"location":{"address":"Central Park","crossStreet":"72nd
+        St & 5th Ave","lat":40.77210798131282,"lng":-73.96772031691907,"labeledLatLngs":[{"label":"display","lat":40.77210798131282,"lng":-73.96772031691907}],"distance":1446,"postalCode":"10021","cc":"US","neighborhood":"Central
+        Park","city":"New York","state":"NY","country":"United States","formattedAddress":["Central
+        Park (72nd St & 5th Ave)","New York, NY 10021","United States"]},"categories":[{"id":"4bf58dd8d48988d1e7941735","name":"Playground","pluralName":"Playgrounds","shortName":"Playground","icon":{"prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/playground_","suffix":".png"},"primary":true}],"verified":true,"stats":{"tipCount":0,"usersCount":0,"checkinsCount":0,"visitsCount":0},"beenHere":{"count":0,"lastCheckinExpiredAt":0,"marked":false,"unconfirmedCount":0},"hereNow":{"count":0,"summary":"Nobody
+        here","groups":[]},"referralId":"v-1627130284","venueChains":[],"hasPerk":false}]}}'
+  recorded_at: Sat, 24 Jul 2021 12:38:05 GMT
+recorded_with: VCR 6.0.0

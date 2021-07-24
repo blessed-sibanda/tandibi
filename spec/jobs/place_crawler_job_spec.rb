@@ -1,5 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe PlaceCrawlerJob, type: :job do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "calls the crawler service" do
+    perform_enqueued_jobs do
+      expect(Place::Crawler).to receive(:call)
+                                  .with("Central Park", 1, 2)
+      described_class.perform_later "Central Park", 1, 2
+    end
+  end
 end

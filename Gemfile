@@ -37,6 +37,7 @@ gem "active_decorator", "~> 1.4"
 gem "faraday", "~> 1.5"
 gem "active_model_serializers", "~> 0.10"
 gem "delayed_job_active_record", "~> 4.1"
+gem "vcr", "~> 6.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
