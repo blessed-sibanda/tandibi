@@ -11,10 +11,10 @@ RSpec.describe "Api::V1::Places", type: :request do
             expect(Place.all).to be_blank
 
             get api_v1_places_path, params: {
-                                      keyword: "Central Park",
-                                      lat: 40.785091,
-                                      lng: -73.968285,
-                                    }
+              keyword: "Central Park",
+              lat: 40.785091,
+              lng: -73.968285
+            }
             expect(json_response).not_to be_blank
             expect(Place.all).not_to be_blank
           end

@@ -15,6 +15,6 @@ class PostsController < ApplicationController
 
   def permitted_params
     params.require(:post).permit(:postable_type, :status_text,
-                                 :thread_id, :sight_place_id, pictures: [])
+      :thread_id, :sight_place_id, pictures: [])
   end
 end

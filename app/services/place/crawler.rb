@@ -23,10 +23,10 @@ class Place::Crawler < ApplicationService
       lat = place_data["location"]["lat"]
       lng = place_data["location"]["lng"]
       next if exists?("en", lng, lat)
-      if place_data["categories"].empty?
-        place_type = "other"
+      place_type = if place_data["categories"].empty?
+        "other"
       else
-        place_type = place_data["categories"][0]["shortName"]
+        place_data["categories"][0]["shortName"]
       end
       Place.create!(name: place_data["name"], coordinate: geo.point(lng, lat), locale: "en", place_type: place_type)
     end
@@ -43,31 +43,31 @@ class Place::Crawler < ApplicationService
     @connection ||= Faraday.new(
       ENDPOINT,
       request: {
-        timeout: 5.seconds,
-      },
+        timeout: 5.seconds
+      }
     )
   end
 
   def crawled_places
     @crawled_places ||= begin
-        response = connection.get ENDPOINT do |req|
-          req.params["query"] = keyword
-          req.params["radius"] = 5_000
-          req.params["ll"] = "#{lat},#{lng}"
-          req.params["client_id"] = CLIENT_ID
-          req.params["client_secret"] = CLIENT_SECRET
-          req.params["v"] = "20180323"
-        end
-        response = JSON.parse(response.body)
-        response["response"]["venues"]
+      response = connection.get ENDPOINT do |req|
+        req.params["query"] = keyword
+        req.params["radius"] = 5_000
+        req.params["ll"] = "#{lat},#{lng}"
+        req.params["client_id"] = CLIENT_ID
+        req.params["client_secret"] = CLIENT_SECRET
+        req.params["v"] = "20180323"
       end
+      response = JSON.parse(response.body)
+      response["response"]["venues"]
+    end
   end
 
   def geo
     @geo ||= RGeo::Geographic::Factory.new(
       "Spherical",
       has_z_coordinate: true,
-      srid: 4326,
+      srid: 4326
     )
   end
 
@@ -75,7 +75,7 @@ class Place::Crawler < ApplicationService
     point = geo.point(lng, lat)
     place = Place.where(
       coordinate: point,
-      locale: "en",
+      locale: "en"
     ).exists?
   end
 end

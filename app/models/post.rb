@@ -31,7 +31,7 @@ class Post < ApplicationRecord
 
   scope :not_reply, -> { where(thread_id: nil) }
   scope :written_by, ->(username) {
-          poster = User.find_by_username username
-          where(user: poster)
-        }
+                       poster = User.find_by_username username
+                       where(user: poster)
+                     }
 end

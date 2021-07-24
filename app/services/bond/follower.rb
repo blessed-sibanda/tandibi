@@ -10,7 +10,7 @@ class Bond::Follower < ApplicationService
   def call
     bond = requester.bonds.build(
       friend: target_user,
-      state: bond_state,
+      state: bond_state
     )
     bond.save!
     bond

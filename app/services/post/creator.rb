@@ -25,9 +25,9 @@ class Post::Creator < ApplicationService
 
   def thread
     @thread ||= begin
-        thread_id = params[:thread_id].presence
-        Post.find(thread_id) if thread_id
-      end
+      thread_id = params[:thread_id].presence
+      Post.find(thread_id) if thread_id
+    end
   end
 
   def postable_type
@@ -49,15 +49,13 @@ class Post::Creator < ApplicationService
   end
 
   def place
-    @place ||= begin
-        place = Place.find(params[:sight_place_id])
-      end
+    @place ||= place = Place.find(params[:sight_place_id])
   end
 
   def create_a_sight_update
     sight = Sight.new(
       place: place,
-      activity_type: Sight::CHECKIN,
+      activity_type: Sight::CHECKIN
     )
     post.postable = sight
     post.user = creator

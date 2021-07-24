@@ -23,7 +23,7 @@ class PlaceSerializer < ActiveModel::Serializer
     coordinate = object.coordinate
     {
       lng: coordinate.longitude,
-      lat: coordinate.latitude,
+      lat: coordinate.latitude
     }
   end
 end

@@ -11,7 +11,7 @@ class BondsController < ApplicationController
     )
     if bond.requesting?
       flash[:notice] = "A follow request has been sent to " +
-                       "@#{visited_user.username} and is pending their approval."
+        "@#{visited_user.username} and is pending their approval."
     end
     redirect_to timeline_path(visited_user)
   end
@@ -20,7 +20,7 @@ class BondsController < ApplicationController
     unless can? :unfollow, visited_user
       return redirect_to timeline_path(visited_user)
     end
-    bond = Bond::Unfollower.call(
+    Bond::Unfollower.call(
       current_user,
       visited_user
     )
