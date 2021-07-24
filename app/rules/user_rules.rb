@@ -11,7 +11,7 @@ class UserRules < Bali::Rules
 
   can :follow do |user, current_user|
     user != current_user &&
-      !user.followings.include?(current_user) &&
+      !user.followers.include?(current_user) &&
       !user.inward_bonds.where(
         user: current_user,
         state: Bond::REQUESTING,
@@ -22,7 +22,7 @@ class UserRules < Bali::Rules
     user != current_user &&
       current_user.bonds.where(
         friend: user,
-        state: [Bond::FOLLOWING, Bond::REQUESTING],
+        state: [Bond::REQUESTING, Bond::FOLLOWING],
       ).exists?
   end
 end

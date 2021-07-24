@@ -12,6 +12,10 @@
   width: 64px;
 }
 
+.body-member .profile-header .content {
+  @apply ml-4 flex-grow;
+}
+
 .body-member .profile-header .content .username,
 .body-member .profile-header .content .name {
   @apply leading-none;
@@ -37,7 +41,7 @@
   @apply bg-dark-600;
 }
 
-.body-member .profile-header .stats .stat :hover {
+.body-member .profile-header .stats .stat:hover {
   @apply bg-dark-500 border-dark-500;
 }
 
