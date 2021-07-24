@@ -40,5 +40,19 @@ FactoryBot.define do
     is_public { true }
     password { "1234pass" }
     confirmed_at { Time.zone.now }
+
+    trait :private do
+      is_public { false }
+    end
+
+    transient do
+      followers { [] }
+    end
+
+    after(:create) do |user, evaluator|
+      evaluator.followers.each do |follower|
+        create(:bond, :following, user: follower, friend: user)
+      end
+    end
   end
 end

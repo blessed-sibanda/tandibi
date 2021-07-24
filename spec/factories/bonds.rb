@@ -23,5 +23,11 @@ FactoryBot.define do
     user_id { "" }
     friend_id { "" }
     state { "MyString" }
+
+    trait :following do
+      state { Bond::FOLLOWING }
+      user
+      friend { create :user }
+    end
   end
 end

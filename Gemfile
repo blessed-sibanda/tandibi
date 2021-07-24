@@ -37,7 +37,7 @@ gem "active_decorator", "~> 1.4"
 gem "faraday", "~> 1.5"
 gem "active_model_serializers", "~> 0.10"
 gem "delayed_job_active_record", "~> 4.1"
-gem "vcr", "~> 6.0"
+gem "bali", "~> 6.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -63,6 +63,7 @@ group :test do
   gem "launchy", "~> 2.5"
   gem "capybara", "~> 3.35"
   gem "apparition", "~> 0.6"
+  gem "vcr", "~> 6.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
