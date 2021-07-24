@@ -34,6 +34,7 @@ gem "premailer-rails", "~> 1.11"
 gem "letter_opener_web", "~> 1.4"
 gem "rexml", "~> 3.2"
 gem "active_decorator", "~> 1.4"
+gem "faraday", "~> 1.5"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
