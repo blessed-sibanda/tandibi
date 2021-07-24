@@ -15,4 +15,15 @@ class BondsController < ApplicationController
     end
     redirect_to timeline_path(visited_user)
   end
+
+  def unfollow
+    unless can? :unfollow, visited_user
+      return redirect_to timeline_path(visited_user)
+    end
+    bond = Bond::Unfollower.call(
+      current_user,
+      visited_user
+    )
+    redirect_to timeline_path(visited_user)
+  end
 end
