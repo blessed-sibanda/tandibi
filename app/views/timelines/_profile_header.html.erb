@@ -11,10 +11,16 @@
   </div>
   <div class="stats">
     <%= render 'timelines/profile_stat',
-     count: user.posts.count, counter: 'posts', is_active: true %>
+     count: user.posts.count, counter: 'posts', is_active: on_timeline?,
+      link_to: timeline_path(user) %>
     <%= render 'timelines/profile_stat',
-     count: user.followers.count, counter: 'followers' %>
+     count: user.followers.count.to_s + 
+     "#{'*' if can? :see_follower_requests,user}", counter: 'followers',
+     is_active: on_follower_list?, 
+     link_to: followers_bond_path(user) %>
     <%= render 'timelines/profile_stat',
-     count: user.followings.count, counter: 'following' %>
+     count: user.followings.count, counter: 'following',
+     is_active: on_following_list?,
+     link_to: following_bond_path(user) %>
   </div>
 </div>

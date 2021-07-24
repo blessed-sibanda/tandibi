@@ -10,6 +10,7 @@
 @import "member/settings.css";
 @import "member/profile_header.css";
 @import "member/bonding_buttons.css";
+@import "member/users_list.css";
 
 .ei-comment-icon {
   transition: all 0.25s ease;

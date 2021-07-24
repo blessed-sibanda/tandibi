@@ -15,6 +15,10 @@ Rails.application.routes.draw do
       member do
         post :follow
         post :unfollow
+        get :followers
+        get :following
+        post :reject
+        post :accept
       end
     end
   end
