@@ -7,6 +7,7 @@
 @import "modal.css";
 @import "member/poster.css";
 @import "member/timeline.css";
+@import "member/settings.css";
 
 .ei-comment-icon {
   transition: all 0.25s ease;

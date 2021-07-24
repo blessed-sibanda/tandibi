@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :settings do
+    get "users/show"
+    get "users/update"
+  end
   get "posts/create"
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
@@ -13,6 +17,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :places, only: %i[index]
     end
+  end
+
+  namespace :settings do
+    resource :user, only: %i[show update]
   end
   root to: "home#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

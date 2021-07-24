@@ -18,6 +18,11 @@ mr-3 text-main-200 hover:text-blue-300 #{'text-blue-300' if on_bunch?}" do %>
 mr-3 text-main-200 hover:text-blue-300 #{'text-blue-300' if on_self?}" do %>
         <%= evil_icon 'ei-user', class: "h-10 w-10 #{'text-blue-300 border-b-2' if on_self?}" %>
       <% end %>
+      <%= link_to settings_user_path,
+                  class: "inline-block mt-0
+mr-3 text-main-200 hover:text-blue-300 #{'text-blue-300' if on_self?}" do %>
+        <%= evil_icon 'ei-gear', class: "h-10 w-10 #{'text-blue-300 border-b-2' if on_settings?}" %>
+      <% end %>
     </div>
     <div>
       <%= link_to destroy_user_session_path, class: 'inline-block mt-0
