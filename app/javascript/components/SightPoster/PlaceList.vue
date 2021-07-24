@@ -1,78 +1,39 @@
 <template>
   <div class="places">
-    <div class="place" :key="place.id" v-for="place in places">
+    <div
+      class="place"
+      :class="isSelected(place)"
+      @click="setPlace(place)"
+      :key="place.id"
+      v-for="place in sight.places"
+    >
       <p>{{ place.name | truncate(40) }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
-      places: [
-        {
-          id: "1",
-          locale: "en",
-          name:
-            "Restaurant 1 Very Very Very Very Very Very Very Ultimately Very Long name",
-          place_type: "restaurant",
-          coordinates: { lng: 1, lat: 1 },
-        },
-        {
-          id: "1",
-          locale: "en",
-          name: "Restaurant 2",
-          place_type: "restaurant",
-          coordinates: { lng: 1, lat: 1 },
-        },
-        {
-          id: "1",
-          locale: "en",
-          name:
-            "Restaurant 1 Very Very Very Very Very Very Very Ultimately Very Long name",
-          place_type: "restaurant",
-          coordinates: { lng: 1, lat: 1 },
-        },
-        {
-          id: "1",
-          locale: "en",
-          name: "Restaurant 2",
-          place_type: "restaurant",
-          coordinates: { lng: 1, lat: 1 },
-        },
-        {
-          id: "1",
-          locale: "en",
-          name:
-            "Restaurant 1 Very Very Very Very Very Very Very Ultimately Very Long name",
-          place_type: "restaurant",
-          coordinates: { lng: 1, lat: 1 },
-        },
-        {
-          id: "1",
-          locale: "en",
-          name: "Restaurant 2",
-          place_type: "restaurant",
-          coordinates: { lng: 1, lat: 1 },
-        },
-        {
-          id: "1",
-          locale: "en",
-          name:
-            "Restaurant 1 Very Very Very Very Very Very Very Ultimately Very Long name",
-          place_type: "restaurant",
-          coordinates: { lng: 1, lat: 1 },
-        },
-        {
-          id: "1",
-          locale: "en",
-          name: "Restaurant 2",
-          place_type: "restaurant",
-          coordinates: { lng: 1, lat: 1 },
-        },
-      ],
+      places: [],
     };
+  },
+  computed: {
+    ...mapState(["sight"]),
+  },
+  methods: {
+    setPlace(place) {
+      this.$store.commit("SET_SIGHT_SELECTED_PLACE", place);
+    },
+    isSelected(place) {
+      const placeId = place.id;
+      const selectedPlace = this.sight.selectedPlace;
+      if (selectedPlace && selectedPlace.id === placeId) {
+        return "selected";
+      }
+    },
   },
 };
 </script>
@@ -90,6 +51,14 @@ export default {
   @apply cursor-pointer;
   min-height: 4em;
   height: 4em;
+}
+
+.place.selected {
+  @apply bg-indigo-800;
+}
+
+.place.selected:hover {
+  @apply bg-indigo-700;
 }
 
 .place:hover {

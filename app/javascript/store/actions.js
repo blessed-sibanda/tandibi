@@ -3,6 +3,31 @@ function handleError(commit, error) {
   commit("SET_ERROR", message);
 }
 
-const actions = {};
+const actions = {
+  async findPlace({ commit, state }) {
+    try {
+      const url = new URL("/api/v1/places", window.location.origin);
+      url.searchParams.append("keyword", state.sight.keyword);
+      url.searchParams.append("lat", state.coordinates.lat);
+      url.searchParams.append("lng", state.coordinates.lng);
+
+      const performSearch = async (isRetried) => {
+        let response = await fetch(url);
+        let data = await response.json();
+        if (data.length === 0 && !isRetried) {
+          setTimeout(() => {
+            performSearch(true);
+          }, 500);
+        } else {
+          commit("SET_SIGHT_PLACES", data);
+        }
+      };
+
+      await performSearch(false);
+    } catch (error) {
+      handleError(commit, error);
+    }
+  },
+};
 
 export default actions;

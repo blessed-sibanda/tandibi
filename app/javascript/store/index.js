@@ -10,6 +10,8 @@ const isDev = process.env.NODE_ENV !== "production";
 const store = new Vuex.Store({
   state: {
     error: null,
+    sight: null,
+    coordinates: { lat: 0, lng: 0 },
   },
   mutations,
   actions,
@@ -20,5 +22,17 @@ const store = new Vuex.Store({
   strict: isDev,
 });
 
-store.commit("RESET");
+function resetStore() {
+  store.commit("RESET");
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      store.commit("SET_COORDINATES", [
+        position.coords.longitude,
+        position.coords.latitude,
+      ]);
+    });
+  }
+}
+
+resetStore();
 export default store;

@@ -1,11 +1,33 @@
 <template>
   <div class="sight-place-finder">
-    <input type="text" placeholder="Find place...">
+    <input
+      type="text"
+      @keyup="findPlace"
+      v-model="keyword"
+      placeholder="Find place..."
+    />
   </div>
 </template>
 
 <script>
-export default {};
+import debounce from "lodash/debounce";
+export default {
+  computed: {
+    keyword: {
+      get() {
+        return this.$store.state.sight.keyword;
+      },
+      set(value) {
+        this.$store.commit("SET_SIGHT_KEYWORD", value);
+      },
+    },
+  },
+  methods: {
+    findPlace: debounce(function() {
+      this.$store.dispatch("findPlace");
+    }, 300),
+  },
+};
 </script>
 
 <style scoped>

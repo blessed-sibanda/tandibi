@@ -17,7 +17,6 @@
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from "vue2-leaflet";
 import "leaflet/dist/leaflet.css";
-
 export default {
   name: "Map2",
   components: {
@@ -29,7 +28,7 @@ export default {
   },
   data() {
     return {
-      zoom: 13,
+      zoom: 15,
       lat: 0,
       lng: 0,
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -48,18 +47,25 @@ export default {
       this.zoom = zoom;
     },
     centerUpdate(center) {
-      this.lat = center.lat;
-      this.lng = center.lng;
-    },
-    success(position) {
-      this.lat = position.coords.latitude;
-      this.lng = position.coords.longitude;
+      this.$store.commit("SET_COORDINATES", [center.lng, center.lat]);
     },
   },
   mounted() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.success);
-    }
+    this.lat = this.$store.state.coordinates.lat;
+    this.lng = this.$store.state.coordinates.lng;
+
+    this.unsubscribe = this.$store.subscribe((mutation, state) => {
+      if (mutation.type == "SET_COORDINATES") {
+        this.lat = this.$store.state.coordinates.lat;
+        this.lng = this.$store.state.coordinates.lng;
+      } else if (mutation.type == "SET_SIGHT_SELECTED_PLACE") {
+        this.lat = this.$store.state.sight.selectedPlace.coordinates.lat;
+        this.lng = this.$store.state.sight.selectedPlace.coordinates.lng;
+      }
+    });
+  },
+  beforeDestroy() {
+    this.unsubscribe();
   },
 };
 </script>
@@ -68,7 +74,6 @@ export default {
 #map {
   height: 150px;
 }
-
 @screen sm {
   #map {
     height: 300px;
