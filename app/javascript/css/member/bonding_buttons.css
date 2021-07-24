@@ -1,0 +1,24 @@
+.body-member .bonding-buttons {
+  @apply self-center;
+}
+
+.body-member .bonding-buttons,
+.body-member .bonding-buttons .icon {
+  height: 42px;
+  width: 42px;
+}
+
+.body-member .bonding-buttons .icon {
+  @apply rounded-full;
+  color: #98a6b7;
+}
+
+.body-member .bonding-buttons .green.icon:hover {
+  @apply text-blue-200;
+  @apply bg-blue-500;
+}
+
+.body-member .bonding-buttons .red.icon:hover {
+  @apply text-red-200;
+  @apply bg-red-800;
+}
